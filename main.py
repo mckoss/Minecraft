@@ -5,6 +5,7 @@ import base64
 import math
 import random
 import time
+from ctypes import c_float
 
 SECTOR_SIZE = 16
 
