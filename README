@@ -1,3 +1,41 @@
 Simple Minecraft-inspired demo written in Python and Pyglet
 
 Video: http://www.youtube.com/watch?v=kC3lwK631X8
+
+# Installing on Max OS/X Lion
+
+Running pyglet 1.1.4 does not run natively on Mac OS/X Mountain Lion (10.8).
+
+When you run:
+
+    $ python main.py
+
+if you see the error:
+
+       /System/Library/Frameworks/QuickTime.framework/QuickTime: mach-o, but wrong architecture
+
+the problem is that you're running a 64-bit python instead of 32 bit python.  You can setup the default
+to 32 bit thusly:
+
+    $ defaults write com.apple.versioner.python Prefer-32-Bit -bool yes
+
+These additional steps gave me a working solution on Mac OS/X 10.8.3 (thanks to [RogueJS][]).
+
+First, I created a virtual environment in the Minecraft repo into which I will install pyglet.
+
+    $ git clone https://github.com/joshsaintjacque/Minecraft.git
+    $ cd Minecraft
+    $ virtualenv env
+    $ source env/bin/activate
+
+Now download and install pyglet (1.1.4).
+
+    $ cd ..
+    $ hg clone https://pyglet.googlecode.com/hg/ pyglet
+    $ cd pyglet
+    $ python setup.py install
+
+Supposedly the new pyglet 1.2 will fix these problems with its cocoa-based interface.  I did not try it.
+
+
+  [RogueJS]: http://roguejs.com/2011-11-22/getting-pyglet-to-work-on-mac-osx-lion/
