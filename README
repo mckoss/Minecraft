@@ -23,7 +23,7 @@ These additional steps gave me a working solution on Mac OS/X 10.8.3 (thanks to 
 
 First, I created a virtual environment in the Minecraft repo into which I will install pyglet.
 
-    $ git clone https://github.com/joshsaintjacque/Minecraft.git
+    $ git clone https://github.com/mckoss/Minecraft.git
     $ cd Minecraft
     $ virtualenv env
     $ source env/bin/activate
